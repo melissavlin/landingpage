@@ -1,0 +1,72 @@
+body{
+	background-color: #ddd;
+	font-family: Book Antiqua, Garamond, serif;
+}
+
+#wrap {
+	width: 100%;
+	float: right;
+}
+
+#header {
+	position: relative;
+	/* if position is relative, it is relative to the wrap,
+	which is it's parent element.
+	If position is changed to absolute, this element will be
+	relevant to the window */
+	right: 30px;
+	width:60px;
+	height: 30px;
+	background-color: #7109aa;
+	float: right;
+	border: solid 1px #a767d5;
+}
+
+#nav {
+	float:right;
+	width: 100%;
+	height: 100px;
+	position: relative;
+	background-color: #7109aa;
+	color: #fffb73;
+	font-size: 75px;
+	text-align: center;
+}
+
+#column1, #column2, #column3 {
+	float: left;
+	width: 99%;
+	height: 150px;
+	background-color: #fffa40;
+	border: dashed 2px #a767d5;
+	text-align: center;
+}
+
+
+#mainContainer {
+	border: solid 3px #42036f;
+	width: 300px;
+	height: 170px;
+	float: left;
+	position: relative;
+	left: 9%;
+}
+
+.column {
+	width: 99%;
+	height: 32.6%;
+	background-color: #a767d5;
+	border: dotted 1px #42036f;
+	float: left;
+	text-align: center;
+	color: #42036f;
+}
+
+.column span {
+	position: relative;
+	top: 30%;
+	}
+.column:hover{
+		background-color: #fff800;
+}
+}

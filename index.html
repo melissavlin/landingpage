@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>melissa's index</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<link rel="stylesheet" type="text/css" href="reset.css">
+
+<style type="text/css">
+
+html {
+	background-color: #FFF7FF;
+	color: #7F7B7F;
+}
+
+#menu {
+	width: 250px;
+	position: absolute;
+	background-color: white;
+	font-family: Arial,sans-serif;
+	font-size: 14px;
+	color: #7F7B7F;
+}
+
+header {
+	position: relative;
+	font-size: 60px;
+	background-color: #785C7F;
+	border: 1px solid black;
+	text-align: center;
+	color: white;
+}
+
+#firstDiv {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 9px;
+	text-align: center;
+	padding: 3px;
+}
+
+/*  HIDDEN UNTIL firstDIV IS CLICKED
+WHEN SHOWN, REMOVE BORDER-BOTTOM FROM FIRSTDIV  */
+
+#dropdown {
+	display: none; 
+	border: 1px dashed #785C7F;
+	/*background-color: #ccc;*/
+	line-height: 25px;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 5px;
+	color: #785C7F;
+}
+
+a {
+	text-decoration: none;
+	color: #785C7F;
+}
+
+a:hover {
+	color: #7F7B7F;
+}
+
+
+#myinfo {
+	text-align: center;
+	background-color: #FFF7FF;
+}
+
+/* HIDDEN UNTIL firstDIV IS CLICKED */
+.popdesc{
+	display: none;
+	position: absolute;
+	left: 120px;
+	width: 200px;
+	border: 1px solid #785C7F;
+	background-color: #FFF7FF;
+	color: #785C7F;
+	line-height: 15px;
+	padding: 5px;
+	z-index: 1;
+}
+
+ul {
+	padding-bottom: 10px
+}
+
+li {
+	padding-left: 15px;
+}
+
+
+/* STYLING FOR JAVASCRIPT EXERCISES SECTION */
+
+.exDiv {
+	display: none;
+	position: absolute;
+	left: 280px;
+	top: 30px;
+	width: 700px;
+	color: black;
+}
+
+.exTitle {
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+}
+
+.eachDiv {
+	width: 700px;
+	float: left;
+}
+
+.exDesc {
+	float: left;
+	width: 275px;
+	padding: 15px;
+}
+
+h2 {
+	text-decoration: underline;
+}
+
+h3 {
+	font-weight: bold;
+}
+#exLoops p {
+	line-height: 15px;
+}
+
+.exOutput {
+	/*float: left;*/
+	width: 100%;
+	padding: 30px;
+	top: 50%;
+	text-align: center;
+}
+
+.exOutput p{
+	text-align: center;
+}
+
+/* END OF STYLING */
+
+</style>
+
+</head>
+
+<body>
+<div id = "menu">
+
+	<header>melissa's i n d e x</header>
+
+	<div id="firstDiv">assignments</div>
+
+<!-- HIDDEN DROPDOWN MENU -->
+
+		<div id="dropdown">
+			<h1>mock-ups</h1>
+
+			<ul>
+				<li>
+					<a href="article.html" target="_blank">random article</a>
+					<span class="popdesc"> task: take a web article and replicate it by using only HTML</span>
+				</li>
+
+				<li>
+					<a href="day2/index.html" target="_blank">media queries</a>
+					<span class="popdesc"> task: create a webpage that detects window size and changes stylesheets accordingly</span>
+				</li>
+
+				<li>
+					<a href="NYCDATimes/index.html" target="_blank">NYCDA Times</a>
+					<span class="popdesc"> task: create a static webpage of NYCDA times that includes 2 columns and a link to an article that has text wrapped around an image</span>
+				</li>
+
+				<li>
+					<a href="personal/index.html" target="_blank">personal page</a>
+					<span class="popdesc"> task: create a personal site with 3 pages that includes a jquery navigation, images, and a page with 2 columns </span>
+				</li>
+
+				<li>
+					<a href="MMCProject/index.html" target="_blank">group project</a>
+					<span class="popdesc"> task: select a cause and put together an informational website using HTML/CSS; should have at least 3 pages and utilize github for collab</span>
+				</li>
+
+			</ul>
+
+			<h1>practice</h1>
+
+			<ul> 
+				<li>
+					<a id="jsDiv" href="#top">javascript</a>
+					<span class="popdesc"> in-class javascript exercises </span>
+
+
+<!-- DIV OF JAVASCRIPT PRACTICE EXERCISES -->
+
+<div class="exDiv">
+
+
+	<div class="exTitle"> Week 2 - Javascript Exercises </div>
+
+		<div class="exDesc">
+			<h3>exercise descriptions</h3>
+		</div>
+
+		<div class="exOutput">
+			<h3>output</h3>
+		</div>
+
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>for loop</h2>
+				<p>Create an array filled with two arrays.</p>
+				<p>Inside each of these arrays should be several strings.</p>
+				<p>Use two loops to display the information (strings) inside of each of these arrays in the console.</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p id="exOutput1"></p>
+		</div>
+	</div>
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>while loop</h2>
+			<p>Create a while loop that "sings" the classic song "99 Bottles of Beer on the Wall".</p>
+		</div>
+
+		<div class="exOutput">
+			<p>See console.</p>
+		</div>
+	</div>
+
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>scope exercise</h2>
+			<p>Create a script that exemplifies global scope and local scope by logging a variable to the console.</p>
+		</div>
+
+		<div class="exOutput">
+			<p>See console.</p>
+		</div>
+	</div>
+
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>javascript exercise</h2>
+			<p>Check if a string is a palindrome.</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p id="exOutput2"></p>
+		</div>
+	</div>
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>javascript exercise</h2>
+			<p>Accepts a string as an argument and checks it for vowels
+</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p id="exOutput3"></p>
+		</div>
+	</div>
+
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>javascript exercise</h2>
+			<p>Write a program to validate a date input. Given a date (06/15/1990, for instance), make sure that it’s in mm/dd/yyyy format.</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p>When is your birthday? <input type="text" id="txtDate" placeholder="mm/dd/yyyy"/> <input type="submit" value="validate date" id="submitDate"/></p>
+		</div>
+	</div>
+
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>javascript exercise</h2>
+			<p>Write a program to find the most frequent item in an array.</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p id="exOutput4a"></p>
+			<p id="exOutput4b"></p>
+		</div>
+	</div>
+
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>extra javascript exercise</h2>
+			<p>Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p id="exOutput5"></p>
+		</div>
+	</div>
+
+	<div class="eachDiv">
+		<div class="exDesc">
+			<h2>extra javascript exercise</h2>
+			<p>Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.</p>
+		</div>
+
+		<div class="exOutput">
+			<p> See js source for code.</p>
+			<p id="exOutput6">See console.</p>
+		</div>
+	</div>
+
+
+
+</div>
+</li>
+<!-- END OF JS PRACTICE EXERCISES -->
+
+
+				<li>
+					<a href="movingbox.html" target="_blank">jQuery</a>
+					<span class="popdesc"> task: create a basic HTML page with no styling that has at least 10 separate elements on it; use jquery to create an animated "show" that fires when the user clicks on the page </span>
+
+<!-- DIV OF MOVING BOXES
+
+
+<div class="exDiv">
+
+
+	<div class="exTitle"> Week 2 - jQuery Exercises </div>
+
+
+<div id="movingBox">
+
+
+<p>CLICK ANYWHERE!</p>
+	<div id="box1">1</div>
+	<div id="box2">2</div>
+	<div id="box3">3</div>
+	<div id="box4">4</div>
+	<div id="box5">5</div>
+	<div id="box6">6</div>
+	<div id="box7">7</div>
+	<div id="box8">8</div>
+	<div id="box9">9</div>
+	<div id="box10">10</div>
+
+
+</div>
+
+</div>
+-->
+
+				</li>
+
+				<li>
+					<a href="jsPractice/ex1clock/index.html" target="_blank">digital clock</a>
+					<span class="popdesc"> task: show local time that ticks every second, minute, and hour; have the background alternate colors every odd/even minute</span>
+				</li>
+
+				<li>
+					<a href="jsPractice/ex3socmedia/index.html" target="_blank">social media</a>
+					<span class="popdesc"> task: make a social media landing page and add at least one animated element</span>
+				</li>
+
+				<li>
+					<a href="jsPractice/ex4form/index.html" target="_blank">HTML form</a>
+					<span class="popdesc"> task: make an HTML form that takes username and password; if the username and password are correct take them to an account page; you need to validate if the username and password matches; if the username and password are incorrect show them an error message; use animation to make the error a friendly one</span>
+				</li>
+
+				<li>
+					<a href="jsPractice/ex14grid/grid.html" target="_blank">chessboard/grid</a>
+					<span class="popdesc"> task: make a grid/chessboard where each cell is reactive to a click or mouseover</span>
+				</li>
+
+			</ul>
+
+
+		<h1>cheat sheets</h1>
+		<ul>
+			<li><a href="terminalCommands.xlsx" target="_blank">git commands</a>
+			<span class="popdesc">git terminal commands reference guide <br/>note: link is downloadable excel file</span>
+			</li>
+
+		</ul>
+
+		</div>
+
+<div id="myinfo">
+	<p>new york code + design academy</p>
+	<p>student june '14</p>
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+//function via w3schools
+
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+ 	var ifEven = (m%2 == 0);
+
+    $("#time").html(h+":"+m+":"+s);
+	    
+
+	    if (ifEven === true) {
+	    	$("body").css("backgroundColor", "#000dff");
+
+	    } 
+ 
+	    if (ifEven !== true) {
+	    	$("body").css("backgroundColor", "#FFD221");
+	    }
+    var t = setTimeout(function(){startTime()}, 500);
+
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+
+</script>
+
+
+<style type="text/css">
+
+body {
+	background-color: #ccc;
+}
+div {
+	text-align: center;
+	vertical-align: bottom;
+	font-size: 40px;
+	font-family: sans-serif;
+	color: black;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<!-- what is a body onload? -->
+
+<body onload="startTime()">
+<div>
+	<div id="time"></div>
+</body>
+
+</html>

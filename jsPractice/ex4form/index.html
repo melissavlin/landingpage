@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fill it out!</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+/*
+4) Make an animation sequence that is triggered when the user submits a form
+ - Make an HTML form that takes Username and Password
+ - If the username and password are correct take them to an account page:
+ 	- You need to validate if the username and password matches
+ - If the username and password are incorrect show them an error message
+	- Use animation to make the error a friendly one
+Style this form to make it pretty and friendly (optional)
+*/
+
+// first compare the input values with an internal value
+// create function that compares input name value with internal info
+// if they are == or not, then return true or false
+
+// if username matches internal username && password matches internal password, execute 'enter' action
+// else execute 'denied' action
+
+
+// $(function(){
+
+
+
+	$("#submit").click(function(){
+
+		var inputName = $("#inputName").val();
+		var inputPwd = $("#inputPwd").val();
+		var inputNameReady = false
+		var inputPwdReady = false
+
+
+		if(inputName == ""){
+			inputNameReady = false
+			console.log("nothing in here")
+			$("#errorMsg").animate({left:"-110px"});
+			$("#inputName").addClass("error");
+		} else {
+			inputNameReady = true
+		}
+
+		if(inputPwd == ""){
+			inputPwdReady = false
+			console.log("nothing in here")
+			$("#errorMsg").animate({left:"-110px"});
+			$("#inputPwd").addClass("error");
+		} else {
+			inputPwdReady = true
+		}
+
+
+		if(inputNameReady && inputPwdReady){
+
+			if (inputName === "melissa" && inputPwd === "nycda"){
+				console.log("yes, everything is correct!");
+				$("#enterMsg").animate({left:"251px"});
+				$("#errorMsg").animate({left:"110px"});
+				$("#inputName").removeClass("error");
+				$("#inputPwd").removeClass("error");
+			} else {
+				if(inputName !== "melissa"){
+					console.log("password is correct but username is incorrect")
+					$("#errorMsg").animate({left:"-109px"});
+					$("#inputName").addClass("error");
+				}
+				if(inputPwd !== "nycda"){
+					console.log("username is correct but password is incorrect")
+					$("#errorMsg").animate({left:"-109px"});
+					$("#inputPwd").addClass("error");
+				}
+			}
+		} else {
+			if(!inputNameReady){
+				console.log("input name is empty")
+				$("#errorMsg").animate({left:"-109px"});
+				$("#inputName").addClass("error");
+
+			}
+			if(!inputPwdReady){
+				console.log("input password is empty")
+				$("#errorMsg").animate({left:"-109px"});
+				$("#inputPwd").addClass("error");
+			}
+		}
+
+
+	});
+
+
+
+	// function isUserValid(inputUserVal){
+	// 	var correctName = "melissa"
+	// 	var correctPwd = "nycda"
+
+	// 	if(inputUserVal == " ");
+	// 		return false;
+
+	// 	if
+	// }
+
+
+
+});
+
+
+
+</script>
+
+
+
+<style type="text/css">
+
+
+html {
+	background-color: #C7FFEA;
+}
+body{
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+#masterDiv {
+	position: relative;
+	width: 250px;
+	height: 350px;
+	border-radius: 10px;
+	margin: 100px auto;
+	text-align: center;
+
+}
+
+#contentDiv {
+	position: relative;
+	width: 220px;
+	height: 300px;
+	background-color: #5EB9FF;
+	border-radius: 10px;
+	margin: 100px auto;
+	text-align: center;
+	padding: 30px 15px 10px 15px;
+
+}
+
+#inputDiv p{
+	margin-top: 3px;
+	margin-bottom: 0;
+	font-style: italic;
+	font-size: 11px;
+}
+
+#content {
+	float: left;
+
+}
+
+input {
+	margin-top: 20px;
+}
+
+#errorMsg {
+	width: 110px;
+	height: 200px;
+	background-color: black;
+	position: absolute;
+	/*display: none;*/
+	border-top-left-radius: 200px;
+	border-bottom-left-radius: 200px;
+	text-align: right;
+	color: white;
+	top: 20%;
+	opacity: .7;
+
+}
+
+#errorMsg p {
+	position: relative;
+	padding-top: 70px;
+
+}
+
+.error {
+	border: 2px solid red;
+}
+
+#enterMsg {
+	width: 110px;
+	height: 200px;
+	background-color: white;
+	position: absolute;
+	border-top-right-radius: 200px;
+	border-bottom-right-radius: 200px;
+	text-align: left;
+	color: black;
+	top: 20%;
+	left: 56%;
+	opacity: .7;
+}
+
+#enterMsg p {
+	position: relative;
+	padding-top: 70px;
+
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div id = "masterDiv">
+
+
+<div id = "errorMsg">
+<p>Uh-Oh.<br/>Please try again.</p>
+</div>
+<div id = "enterMsg">
+<p>Super.<br/>You may enter!</p>
+</div>
+
+	<div id = "contentDiv">
+	<p> Hi there! Please enter your username and password below to validate existence.</p>
+
+	<div id = "inputDiv">
+		<input type="text" id="inputName" name="username" value="melissa" maxlength="12">
+
+			<p>enter username (between 8-12 characters)</p>
+
+		<input type ="password" id="inputPwd" name="password" value="nycda" maxlength="10">
+
+			<p>enter password (between 5-8 characters)</p>
+
+		<input type="submit" id="submit" value="enter">
+	</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

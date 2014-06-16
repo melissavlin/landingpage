@@ -1,0 +1,96 @@
+html {
+	background-color: #ccc;
+	height: 100%
+}
+
+body {
+	background-color: white;
+	border: solid 1px #000;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	min-width: 900px;
+	max-width: 900px;
+	min-height: 800px;
+	position: relative;
+	margin: 0 auto;
+}
+
+
+.header {
+	font-size: 36px;
+	text-align: center;
+	background-color: #ff9540;
+	float: left;
+	width: 100%;
+	padding-top: 30px;
+	line-height: 25px;
+	padding-bottom: 20px;
+}
+
+span {
+	letter-spacing: 8px;
+	line-height: 30px;
+}
+
+#subheader {
+	background-color: #ff6840;
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+
+.nav {
+	float: left;
+	background-color: #ffb173;
+	width: 100%;
+}
+
+.nav div{
+	padding: 4px 15px 4px 15px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	width: 20%;
+}
+
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+article{
+	float: left;
+	clear: both;
+	width: 500px;
+	height: 100%;
+	position: relative;
+	left: 180px;
+	margin: 20px auto;
+}
+
+article img{
+	float:left;
+	width: 300px;
+	margin: 0 10px 10px 0;
+}
+
+#title{
+	background-color: #ff6840;
+}
+
+.content {
+	text-align: justify;
+}
+
+div .fb {
+	position: fixed;
+	float:left;
+}
+
+.fb img {
+	width: 40px;
+}

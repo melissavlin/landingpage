@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Grid</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+// Make a grid that has 16 columns and 10 rows Make a chess board
+// Make a “living grid”
+// Take either or both grid and make each cell reactive on click or on mouse over
+
+
+$(document).ready(function(){
+
+function grid(){
+	var x = 0
+	var y = 0
+	var boxID = "#box" + i + "_" + j
+
+	for (var i = 0; i < 10; i++)
+	{ 	
+
+		for (var j = 0; j < 16; j++){
+
+		    $("body").append("<div class='box' id='box" + i + "_" + j + "' style='left:" + x + "px; top:" + y + "px;'></div>")
+
+			x = x + 50;
+
+					if (i%2 == 0){
+						if (j%2 == 0 ){
+							$("#box" + i + "_" + j).addClass("white")
+						} else {
+							$("#box" + i + "_" + j).addClass("black")
+						}
+					} else {
+						if (j%2 != 0) {
+							$("#box" + i + "_" + j).addClass("white")
+						} else {
+							$("#box" + i + "_" + j).addClass("black")
+						}
+
+					}
+// // else
+
+		}
+
+		x = 0
+		y = y + 50
+	}
+
+	$(".box").click(function(){
+		$(this).toggleClass("red");
+	})
+/*	$(".box").mouseover(function(){
+		$(this).css({backgroundColor: "red"})
+	})
+
+	$(".box").mouseleave(function(){
+		$(this).css({backgroundColor: "white"})
+	}) */
+}
+
+grid()
+
+
+})
+
+
+</script>
+
+<style type="text/css">
+
+.box {
+	width: 48px;
+	height: 48px;
+	background-color: white;
+	border: 1px solid black;
+	position: absolute;
+}
+
+.white {
+	background-color: white;
+}
+
+.black {
+	background-color: black;
+}
+
+.red {
+	background-color: red;
+	border: 1px dotted black;
+}
+</style>
+
+</head>
+<body>
+<!-- 	-->
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Social Media Landing Page</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+function moveIcon(objId){
+	this.objID = objId
+	this.hasMoved = false;
+}
+
+var emailIcon = new moveIcon("#emailIcon");
+var twitterIcon = new moveIcon("#twitterIcon");
+var fbIcon = new moveIcon("#fbIcon");
+var instaIcon = new moveIcon("#instaIcon")
+
+
+//
+
+function centerThings(siblingName){
+
+var mainArea = $("#links").width();
+var midPoint = mainArea / 2;
+console.log(midPoint)
+
+var objMainArea = siblingName.width();
+var objMidPoint = siblingName.width() / 2;
+console.log(objMidPoint);
+
+
+var locationPoint = (midPoint - objMidPoint) - 48;
+
+//console.log(locationPoint);
+
+var trueLocationPoint = mainArea - locationPoint
+//console.log(trueLocationPoint)
+
+siblingName.css({left:locationPoint+"px"});
+}
+
+
+
+
+//
+/*
+console.log(emailIcon.objID);
+console.log(fbIcon.objID);
+*/
+
+//
+	// var moved = false;
+	//alert(event.target.id)
+
+	$(".icon").click(function(){
+
+
+
+
+
+		var currObject;
+
+		if($(this).attr("id") == "emailIcon"){
+			currObject = emailIcon;
+		}else if($(this).attr("id") == "twitterIcon"){
+			currObject = twitterIcon;
+		}else if($(this).attr("id") == "fbIcon"){
+			currObject = fbIcon;
+		}else if($(this).attr("id") == "instaIcon"){
+			currObject = instaIcon;
+		}
+
+		console.log(currObject.objID);
+		console.log(currObject.hasMoved);
+
+
+		if(currObject.hasMoved == false){
+			// console.log("false")
+
+			$(currObject.objID).animate({left:"250px"}, 2000, function(){
+
+				$(currObject.objID).siblings(".link").show();
+
+				centerThings($(currObject.objID).siblings(".link"))
+
+			currObject.hasMoved = true;
+			// console.log("i got it")
+
+				});
+		} else {
+
+			$(currObject.objID).animate({left: "0px"}, 2000); 
+
+				$(currObject.objID).siblings(".link").hide();
+					currObject.hasMoved = false;
+
+		}
+		//console.log(emailIcon.objID);
+
+		// if(!$(".icon").hasClass("Moved")){
+
+		// 	$(this).animate({left:"250px"}, 2000, function(){
+		// 		$(this).siblings(".link").show().addClass("Moved");
+		// 		//moved = true;
+
+		// 	});
+
+
+
+		// } else {
+		// 	alert(":D")
+		// 	$(this).siblings(".link").hide(function(){
+		// 		$(this).animate({right:"300px"}, 3000).removeClass("Moved");
+		// 	});
+
+
+		// }
+
+
+		//}else{
+
+		//	alert(":)");
+		//}
+	});
+});
+
+
+</script>
+
+
+	<style type="text/css">
+
+
+header {
+	height: 200px;
+	width: 100%;
+	float: left;
+	background-color: #7F0000;
+	color: white;
+	font-family: Arial, sans-serif;
+	font-size: 80px;
+	text-align: center;
+	vertical-align: center;
+}
+
+#mainbody {
+	background-color: #ccc;
+	width: 100%;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	position: relative;
+	min-width: 900px;
+	margin:0 auto;
+}
+
+#links {
+/*	float:left;
+	margin: 70px 200px 100px 200px;*/
+	position: absolute;
+	margin: auto;
+	margin-top: 250px;
+	left: 0;
+	right: 0;
+	height: 250px;
+	width: 300px;
+}
+
+.icon {
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+	vertical-align: middle;
+
+}
+#links div {
+	margin-bottom: 20px;
+	position: relative;
+
+}
+
+.link{
+
+	position:relative;
+}
+
+#links a {
+	display:none;
+	color: black;
+	text-decoration: none;
+	font-family: Arial,sans-serif;
+	text-align: center;
+}
+
+div img {
+	width: 40px;
+	vertical-align: center;
+
+}
+
+#links a:hover {
+	text-decoration: none;
+	color: #7F0000;
+}
+
+	</style>
+</head>
+<body>
+
+<header> social media </header>
+<div id="mainBody">
+<!-- 
+<div id="links">
+	<div class="block">
+	<img class="icon" src="images/email.png" id="emailIcon"/> -->
+
+
+<div id="links">
+	<div class="block">
+		<img class="icon" src="images/email.png" id="emailIcon"/>
+		<a href="mailto:melissavlin@gmail.com" class="link">melissavlin@gmail.com</a>
+	</div>
+	<div class="block">
+		<img class ="icon" src="images/twitter.png" id="twitterIcon"/>
+		<a href="http://www.twitter.com/" target="_blank" class="link">follow me</a>
+	</div>
+	<div class="block">
+		<img class="icon" src="images/facebook.png" id="fbIcon"/>
+		<a href="http://www.facebook.com/" target="_blank" class="link">friend me</a>
+	</div>
+	<div class="block">
+		<img class="icon" src="images/instagram.png" id="instaIcon"/>
+		<a href="http://www.instagram.com" target="_blank" class="link">instagram </a>
+	</div>
+</div>
+
+</div>
+	
+</body>
+</html>

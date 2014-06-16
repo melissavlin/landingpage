@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Playing with jQuery</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+// function sayHello(){
+// 		alert("hello")}, 3000);
+// 	})
+function changeBox9(){
+	("#box9").toggleClass("changebox9");
+}
+console.log("this works")
+
+	$("html").click(function(){
+
+		$("#box1").css("backgroundColor", "red");
+		$("#box2").animate({width:"+=200px"}, 500);
+		$("#box3").animate({left:"+=100px"}, 500);
+		$("#box4").slideUp(2000).slideDown(2000);
+		$("#box5").animate({opacity: "0.5"});
+		$("#box6").animate({fontSize:"40px"}, "slow", function (){
+			$(this).animate({fontSize:"10px"}, "slow")
+		});
+		$("#box7").animate({left:"+=40px", width:"1px"}, 300, function(){
+			$(this).animate({width:"40px"})
+		});
+		var div=$("#box8");
+		    div.animate({height:'120px',opacity:'0.4'},"slow");
+		    div.animate({width:'120px',opacity:'0.8'},"slow");
+		    div.animate({height:'30px',opacity:'0.4'},"slow");
+		    div.animate({width:'30px',opacity:'0.8'},"slow");
+		$("#box9").toggleClass("changebox9");
+		$("#box10").fadeToggle(3000);
+
+	});
+});
+
+</script>
+
+<style type ="text/css">
+
+
+#box1, #box2, #box3, #box4, #box5, #box6, #box7, #box8, #box9, #box10 {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: center;
+	border-radius: 5px;
+}
+
+#box1 {
+	background-color: black;
+}
+#box2 {
+	background-color: blue;
+}
+#box3 {
+	background-color: green;
+	position: relative;
+}
+#box4 {
+	background-color: grey;
+	position:relative;
+}
+#box5 {
+	background-color: red;
+}
+
+#box6 {
+	background-color: pink;
+}
+#box7 {
+	background-color: orange;
+	position: relative;
+}
+#box8 {
+	background-color: yellow;
+	position: relative;
+}
+#box9 {
+	background-color: aquamarine;
+}
+
+.changebox9 {
+	background-color: white;
+	color: white;
+	border: 2px solid black;
+}
+
+#box10 {
+	background-color: brown;
+
+}
+</style>
+
+</head>
+<body>
+<p>CLICK ANYWHERE!</p>
+	<div id="box1">1</div>
+	<div id="box2">2</div>
+	<div id="box3">3</div>
+	<div id="box4">4</div>
+	<div id="box5">5</div>
+	<div id="box6">6</div>
+	<div id="box7">7</div>
+	<div id="box8">8</div>
+	<div id="box9">9</div>
+	<div id="box10">10</div>
+
+
+
+</body>
+</html>
